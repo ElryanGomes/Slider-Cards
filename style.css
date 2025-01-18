@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e4e2e2;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mini-container{
+    display: -webkit-inline-box;
+}
+
+.container h1 {
+    margin: 30px 0;
+    color: #1b1b1b;
+}
+
+.container .allCards {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+}
+
+.container .allCards .cards {
+    width: 300px;
+    height: 350px;
+    margin: 20px 30px;
+    border: 1px solid rgb(78, 77, 77);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .allCards .cards img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.container .allCards .cards p {
+    font-size: 18px;
+    position: relative;
+    left: 3%;
+    bottom: 18%;
+    z-index: 2;
+    color: #eee;
+}
+
+.container .allCards .cards button {
+    width: 100px;
+    height: 30px;
+    color: #1b1b1b;
+    background-color: #eeeeee77;
+    padding: 3px 13px;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 3%;
+    bottom: 15%;
+    z-index: 4;
+}
+
+.container .allCards .next,
+.container .allCards .back {
+    border: none;
+    background-color: #929090;
+    border-radius: 8px;
+    color: #eee;
+    font-weight: bolder;
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+.container .allCards .next:hover,
+.container .allCards .back:hover {
+    background-color: #eee;
+    border: 0.5px solid #1b1b1b;
+    color: #1b1b1b;
+    cursor: pointer;
+}
+
+.container button {
+    padding: 12px 15px;
+}
+
+.container .allCards button.next {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+}
+
+.container .allCards button.back {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+}
+
+/* move cards */
+.container.next .cards{
+    animation: moveCardsNext 0.5s linear 1 forwards
+} 
+
+@keyframes moveCardsNext {
+    from{
+        transform: translateX(350px)
+    }
+    
+}
+
+.container.back .cards{
+    animation: moveCardsBack 0.5s linear 1 forwards
+}
+
+@keyframes moveCardsBack {
+    from{
+        transform: translateX(-350px)
+    }
+    
+}
